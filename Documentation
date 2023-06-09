@@ -1,0 +1,12 @@
+The Elevator Maintenance Contract contains several functions to manage elevator maintenance tasks. Below is a brief overview of each function and its purpose:
+
+"createMaintenanceTask(address _elevator, uint _scheduledDate, string memory _description)": This function allows the contract owner to create a new maintenance task for an elevator, specifying the elevator's address, scheduled maintenance date, and a description of the task.
+"updateMaintenanceTask(uint _taskId, uint _newScheduledDate, string memory _newDescription)": This function allows the contract owner to update an existing maintenance task by providing the task ID, a new scheduled date, and a new description.
+"getMaintenanceTask(uint _taskId)": This function allows anyone to retrieve the details of a specific maintenance task by providing its task ID. The function returns the elevator address, scheduled date, description, and completion status of the task.
+"markTaskAsCompleted(uint _taskId)": This function allows the contract owner to mark a maintenance task as completed by providing the task ID.
+"getNumberOfTasks()": This function allows anyone to retrieve the total number of maintenance tasks created in the contract.
+The contract also emits events when certain actions are taken, allowing users to monitor and track updates:
+
+"MaintenanceTaskCreated(uint indexed taskId, address indexed elevator, uint scheduledDate, string description)": This event is emitted when a new maintenance task is created.
+"MaintenanceTaskUpdated(uint indexed taskId, uint newScheduledDate, string newDescription)": This event is emitted when an existing maintenance task is updated.
+"MaintenanceTaskCompleted(uint indexed taskId)": This event is emitted when a maintenance task is marked as completed.
