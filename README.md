@@ -37,3 +37,5 @@ With the Smart Contracts for Elevator Automation project, the elevator industry 
 ## Conclusion
 
 The Smart Contracts for Elevator Automation project aims to revolutionize elevator maintenance and repair processes using the power of blockchain technology. With this innovative solution, the elevator industry can provide more effective, safe, and cost-efficient services, quickly responding to users' needs."
+
+
