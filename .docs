@@ -1,6 +1,54 @@
+
     "/**
-* @title Elevator Maintenance Contract
-* @author Burak Yasin Kaya
-* @notice This contract is for tracking elevator maintenance processes.
-* @dev This contract contains functions to manage elevator maintenance tasks and related data.
+* @file getting_started.md
+* @title Getting Started
+* @description This file contains the necessary steps and prerequisites to get started with the Autonomous Elevator Maintenance Platform.
+*/
+
+/**
+* @file integration.md
+* @title Integration
+* @description This file provides instructions on how to integrate the platform with existing elevator systems.
+*/
+
+/**
+* @file iot.md
+* @title IoT Configuration
+* @description This file offers details about the setup, configuration, and usage of IoT devices.
+*/
+
+/**
+* @file sensor.md
+* @title Sensor Information
+* @description This file provides technical information about the sensors used for monitoring elevator performance.
+*/
+
+/**
+* @file data_collection.md
+* @title Data Collection
+* @description This file includes information about the functioning of the data collection module and how collected data is stored.
+*/
+
+/**
+* @file data_processing.md
+* @title Data Processing
+* @description This file contains explanations on how collected data is processed, analyzed, and converted into useful information for elevator status.
+*/
+
+/**
+* @file maintenance.md
+* @title Maintenance Application
+* @description This file contains details about the functioning of the maintenance application, how maintenance needs are identified, and how maintenance tasks are scheduled.
+*/
+
+/**
+* @file notification.md
+* @title Notification System
+* @description This file provides information about the configuration, functioning, and how notifications are sent according to maintenance requirements.
+*/
+
+/**
+* @file troubleshooting.md
+* @title Troubleshooting
+* @description This file offers steps and tips for diagnosing and solving potential issues.
 */"
