@@ -1,41 +1,42 @@
-# Elevator-Maintenance-System
+# Elevator Maintenance System
 
-"# Smart Contracts for Elevator Automation
+Solidity smart contract prototype for tracking elevator assets and their
+maintenance records on-chain.
 
-## Project Summary
+## Contract
 
-This project is an innovative initiative aiming to automate elevator maintenance, repair, and update processes using blockchain-based smart contracts. Our project provides a decentralized platform that records and implements periodic maintenance and updates, increasing the efficiency and reliability of the elevator sector. As a result, elevator performance and safety are continuously monitored, allowing users to receive more effective services while significantly reducing maintenance costs and time.
+`ElevatorMaintenance.sol` contains `ElevatorMaintenanceSystem`, an owner-managed
+contract with two registries:
 
-## Project Objectives
+- `elevators` stores elevator brand, installation date, last maintenance date,
+  and next maintenance date.
+- `maintenances` stores scheduled maintenance records and completion state.
 
-* Automate elevator maintenance and repair processes and accelerate the workflows.
-* Provide periodic inspection and updates of elevators through a decentralized platform.
-* Increase elevator performance and safety while continuously monitoring.
-* Offer more effective and cost-efficient services for elevator users.
-* Ensure transparency and reliability in maintenance and repair processes.
+## Workflow
 
-## Technology and Methods
+1. The owner deploys the contract.
+2. The owner registers an elevator with `createElevator`.
+3. The owner schedules a maintenance record with `createMaintenance`.
+4. The owner marks a maintenance record complete with `completeMaintenance`.
+5. The owner can update the next planned maintenance date with
+   `updateNextMaintenanceDate`.
 
-Our project utilizes smart contracts designed to operate on popular blockchain networks such as Ethereum. Smart contracts manage elevator maintenance, repair, and update processes and include:
+## Main Functions
 
-* Periodic maintenance scheduling
-* Elevator performance evaluation and monitoring
-* Repair requests and process tracking
-* Automatic distribution of new updates
-* Inter-party payment management in maintenance and repair processes
+- `createElevator(string brand, uint256 installationDate, uint256 nextMaintenanceDate)`
+- `createMaintenance(uint256 elevatorId, uint256 maintenanceDate, string maintenanceType)`
+- `completeMaintenance(uint256 maintenanceId)`
+- `updateNextMaintenanceDate(uint256 elevatorId, uint256 nextMaintenanceDate)`
 
-## Advantages
+## Events
 
-With the Smart Contracts for Elevator Automation project, the elevator industry and users can benefit from the following advantages:
+- `ElevatorCreated`
+- `MaintenanceCreated`
+- `MaintenanceCompleted`
 
-* Faster and more efficient maintenance and repair processes
-* Continuous improvement in elevator safety and performance
-* Cost-effective and efficient service procurement
-* Customizable and scalable solutions
-* Reliable and transparent transactions provided by blockchain technology
+## Notes
 
-## Conclusion
-
-The Smart Contracts for Elevator Automation project aims to revolutionize elevator maintenance and repair processes using the power of blockchain technology. With this innovative solution, the elevator industry can provide more effective, safe, and cost-efficient services, quickly responding to users' needs."
-
-
+- Dates are stored as Unix timestamps.
+- Only the deployer/owner can create or update records.
+- The contract validates elevator and maintenance IDs before updating records.
+- This is a learning prototype and should be audited before production use.
