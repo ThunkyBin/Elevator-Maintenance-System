@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-"pragma solidity ^0.8.20;
+pragma solidity ^0.8.20;
 
 contract ElevatorMaintenanceSystem {
     address public owner;
@@ -49,7 +49,7 @@ contract ElevatorMaintenanceSystem {
         uint256 _installationDate,
         uint256 _nextMaintenanceDate
     ) public onlyOwner {
-        elevators<nextElevatorId> = Elevator({
+        elevators[nextElevatorId] = Elevator({
             id: nextElevatorId,
             brand: _brand,
             installationDate: _installationDate,
@@ -71,7 +71,7 @@ contract ElevatorMaintenanceSystem {
         uint256 _maintenanceDate,
         string memory _maintenanceType
     ) public onlyOwner {
-        maintenances<nextMaintenanceId> = Maintenance({
+        maintenances[nextMaintenanceId] = Maintenance({
             id: nextMaintenanceId,
             elevatorId: _elevatorId,
             maintenanceDate: _maintenanceDate,
@@ -90,10 +90,10 @@ contract ElevatorMaintenanceSystem {
     }
 
     function completeMaintenance(uint256 _maintenanceId) public onlyOwner {
-        Maintenance storage maintenance = maintenances<_maintenanceId>;
+        Maintenance storage maintenance = maintenances[_maintenanceId];
         require(!maintenance.isCompleted, 'Maintenance already completed');
 
-        Elevator storage elevator = elevators<maintenance.elevatorId>;
+        Elevator storage elevator = elevators[maintenance.elevatorId];
         elevator.lastMaintenanceDate = maintenance.maintenanceDate;
         
         maintenance.isCompleted = true;
@@ -104,7 +104,7 @@ contract ElevatorMaintenanceSystem {
         uint256 _elevatorId,
         uint256 _nextMaintenanceDate
     ) public onlyOwner {
-        Elevator storage elevator = elevators<_elevatorId>;
+        Elevator storage elevator = elevators[_elevatorId];
         elevator.nextMaintenanceDate = _nextMaintenanceDate;
     }
-}"
+}
