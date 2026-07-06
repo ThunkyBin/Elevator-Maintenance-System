@@ -71,6 +71,8 @@ contract ElevatorMaintenanceSystem {
         uint256 _maintenanceDate,
         string memory _maintenanceType
     ) public onlyOwner {
+        require(_elevatorId < nextElevatorId, 'Elevator does not exist');
+
         maintenances[nextMaintenanceId] = Maintenance({
             id: nextMaintenanceId,
             elevatorId: _elevatorId,
@@ -90,6 +92,8 @@ contract ElevatorMaintenanceSystem {
     }
 
     function completeMaintenance(uint256 _maintenanceId) public onlyOwner {
+        require(_maintenanceId < nextMaintenanceId, 'Maintenance does not exist');
+
         Maintenance storage maintenance = maintenances[_maintenanceId];
         require(!maintenance.isCompleted, 'Maintenance already completed');
 
@@ -104,6 +108,8 @@ contract ElevatorMaintenanceSystem {
         uint256 _elevatorId,
         uint256 _nextMaintenanceDate
     ) public onlyOwner {
+        require(_elevatorId < nextElevatorId, 'Elevator does not exist');
+
         Elevator storage elevator = elevators[_elevatorId];
         elevator.nextMaintenanceDate = _nextMaintenanceDate;
     }
