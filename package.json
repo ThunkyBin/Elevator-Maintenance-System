@@ -1,0 +1,13 @@
+{
+  "name": "elevator-maintenance-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Runnable Solidity elevator maintenance registry.",
+  "scripts": {
+    "compile": "node scripts/compile.js",
+    "test": "node test/smoke.js"
+  },
+  "devDependencies": {
+    "solc": "0.8.30"
+  }
+}

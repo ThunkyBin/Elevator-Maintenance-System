@@ -3,6 +3,16 @@
 Solidity smart contract prototype for tracking elevator assets and their
 maintenance records on-chain.
 
+## Quick Start
+
+```bash
+npm install
+npm test
+```
+
+`npm run compile` writes ABI and bytecode artifacts to `build/`. GitHub Actions
+runs the smoke test automatically for every push and pull request.
+
 ## Contract
 
 `ElevatorMaintenance.sol` contains `ElevatorMaintenanceSystem`, an owner-managed
